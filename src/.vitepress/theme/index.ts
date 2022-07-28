@@ -5,7 +5,7 @@ import { h } from 'vue'
 // import './override.css'
 
 export default {
-  ...VPTheme,
+  // ...VPTheme,
   Layout() {
     return h(VPTheme.Layout, null, {
       // uncomment to test layout slots
