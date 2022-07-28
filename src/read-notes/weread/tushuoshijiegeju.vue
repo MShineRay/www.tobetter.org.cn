@@ -253,7 +253,7 @@ export default {
 
 }
 </script>
-<style scoped>
+<style>
 @import './css/weread.css';
 @import './css/readnotes.css';
 </style>
