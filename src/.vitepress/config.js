@@ -155,24 +155,24 @@ module.exports = (async () => {
       [
         'script',
         {
-          src: 'https://www.googletagmanager.com/gtag/js?id=G-R31NB6KKBC',
+          src: 'https://www.googletagmanager.com/gtag/js?id=G-XXD8RTS8E8',
           async: "async"
         }
       ],
-      [
-        'link',
-        {
-          href: '//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css',
-          rel: "stylesheet"
-        }
-      ],
-      [
-        'script',
-        {
-          src: '//cdn.bootcss.com/gitalk/1.7.2/gitalk.min.js',
-          async: "async"
-        }
-      ],
+      // [
+      //   'link',
+      //   {
+      //     href: '//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css',
+      //     rel: "stylesheet"
+      //   }
+      // ],
+      // [
+      //   'script',
+      //   {
+      //     src: '//cdn.bootcss.com/gitalk/1.7.2/gitalk.min.js',
+      //     async: "async"
+      //   }
+      // ],
       [
         'script',
         {},
@@ -183,27 +183,16 @@ module.exports = (async () => {
       ],
       [
         'script',
-        {},
-        fs.readFileSync(
-          path.resolve(__dirname, './inlined-scripts/gitalk.js'),
-          'utf-8'
-        )
+        {
+          src: '/scripts/felogsdk.iife.min.js',
+        }
       ],
-
-      // [
-      // 'script',
-      //   {
-      //     src: 'https://h.online-metrix.net/fp/tags.js?org_id=1snn5n9w&session_id=opayegyptorder_id',
-      //   }
-      // ],
-      // [
-      //   'script',
-      //   {},
-      //   fs.readFileSync(
-      //     path.resolve(__dirname, './inlined-scripts/test.js'),
-      //     'utf-8'
-      //   )
-      // ],
+      [
+        'script',
+        {
+          src: '/scripts/felogsdk.init.js',
+        }
+      ],
     ],
 
     themeConfig: {
