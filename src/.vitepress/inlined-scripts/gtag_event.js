@@ -1,7 +1,7 @@
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', 'G-QRLE7HBPRG');
+gtag('config', 'G-XXD8RTS8E8');
 function gtag_event(eventName, data) {
   gtag("event", eventName, data || {
     // send_to: __opay_tracking_id,
