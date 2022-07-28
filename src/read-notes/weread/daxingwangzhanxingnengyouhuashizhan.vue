@@ -1087,6 +1087,6 @@ export default {
 }
 </script>
 <style>
-@import './css/weread.css';
-@import './css/readnotes.css';
+@import '/css/weread.css';
+@import '/css/readnotes.css';
 </style>
