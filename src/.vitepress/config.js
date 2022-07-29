@@ -141,6 +141,22 @@ module.exports = (async () => {
       [
         'link',
         {
+          href: '/css/readnotes.css',
+          rel: 'stylesheet',
+          type:'text/css'
+        }
+      ],
+      // [
+      //   'link',
+      //   {
+      //     href: '/css/weread.css',
+      //     rel: 'stylesheet',
+      //     type:'text/css'
+      //   }
+      // ],
+      [
+        'link',
+        {
           href: '/favicon.ico',
           rel: 'icon'
         }
