@@ -526,5 +526,5 @@
 </template>
 <style scoped>
 @import '/css/weread.css';
-@import '/css/readnotes.css';
+
 </style>

@@ -314,22 +314,6 @@
   }
 }
 
-.comment-area__btn {
-  font-size: 16px
-}
-
-/*:focus {*/
-/*  outline: none*/
-/*}*/
-
-/*article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {*/
-/*  display: block*/
-/*}*/
-
-/*audio, canvas, video {*/
-/*  display: inline-block*/
-/*}*/
-
 html body.wr_whiteTheme {
   background-color: #f6f7f9
 }

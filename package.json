@@ -1,7 +1,7 @@
 {
-  "name": "mshineray.github.io",
+  "name": "www.tobetter.org.cn",
   "version": "1.0.5",
-  "description": "https://mshineray.github.io",
+  "description": "https://www.tobetter.org.cn",
   "main": "src/index.ts",
   "exports": {
     ".": "./src/index.ts",
@@ -14,12 +14,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MShineRay/mshineray.github.io.git"
+    "url": "git+https://github.com/MShineRay/www.tobetter.org.cn.git"
   },
   "author": "MSR",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/MShineRay/mshineray.github.io/issues"
+    "url": "https://github.com/MShineRay/www.tobetter.org.cn/issues"
   },
   "scripts": {
     "lint": "prettier --check --write --parser typescript \"{__tests__,docs,src,types}/**/*.ts\"",
