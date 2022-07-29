@@ -1,6 +1,21 @@
 # 项目名称
 https://www.tobetter.org.cn
+## env
+- Project setup
+  ```
+  pnpm i
+  ```
 
+- Compiles and hot-reloads for development
+  ```
+  pnpm dev
+  
+  ```
+
+- Compiles and minifies for production
+  ```
+  pnpm build
+  ```
 ## design
 - 左侧菜单
 
