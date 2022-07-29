@@ -1,7 +1,4 @@
 <script setup lang="ts">
-// import NewsLetter from './NewsLetter.vue'
-// import SponsorsGroup from './SponsorsGroup.vue';
-// import VueMasteryModal from './VueMasteryModal.vue';
 </script>
 
 <template>
@@ -12,9 +9,15 @@
     <p class="description">
       to do better for better
     </p>
-    <p>
-
-    </p>
+<!--    <div class="api-filter">-->
+<!--      <input-->
+<!--        type="search"-->
+<!--        placeholder="Enter keyword"-->
+<!--        id="api-filter"-->
+<!--        v-model="query"-->
+<!--      />-->
+<!--      <label for="api-filter">Search</label>-->
+<!--    </div>-->
     <p class="actions">
 <!--      <vue-mastery-modal />-->
 <!--      <a class="get-started" href="/read-notes/">-->
@@ -62,7 +65,6 @@ section {
 html:not(.dark) .accent,
 .dark .tagline {
   background: -webkit-linear-gradient(315deg, #42d392 25%, #647eff);
-  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -86,32 +88,10 @@ html:not(.dark) .accent,
   transition: background-color 0.5s, color 0.5s;
 }
 
-.actions .get-started {
-  margin-right: 18px;
-  background: #42d392;
-  color: #fff;
-}
-
 .actions .setup{
   margin-right: 18px;
 }
 
-.actions .icon {
-  display: inline;
-  position: relative;
-  top: -1px;
-  margin-left: 2px;
-  fill: currentColor;
-  transition: transform 0.2s;
-}
-
-.actions .get-started:hover {
-  transition-duration: 0.2s;
-}
-
-.actions .get-started:hover .icon {
-  transform: translateX(2px);
-}
 
 .actions .get-started,
 .actions .setup {
@@ -127,70 +107,6 @@ html:not(.dark) .accent,
 .dark .actions .get-started:hover,
 .dark .actions .setup:hover {
   background-color: var(--vt-c-gray-dark-3);
-}
-
-#special-sponsor {
-  border-top: 1px solid var(--vt-c-divider-light);
-  border-bottom: 1px solid var(--vt-c-divider-light);
-  padding: 12px 24px;
-  text-align: center;
-}
-
-#special-sponsor span {
-  color: var(--vt-c-text-2);
-  font-weight: 500;
-  font-size: 13px;
-  vertical-align: middle;
-  margin: 0 24px;
-}
-
-#special-sponsor img {
-  display: inline-block;
-  vertical-align: middle;
-  height: 36px;
-}
-
-.dark #special-sponsor img {
-  filter: grayscale(1) invert(1);
-}
-
-#highlights {
-  max-width: 960px;
-  margin: 0px auto;
-  color: var(--vt-c-text-2);
-}
-
-#highlights h2 {
-  font-weight: 600;
-  font-size: 20px;
-  letter-spacing: -0.4px;
-  color: var(--vt-c-text-1);
-  transition: color 0.5s;
-  margin-bottom: 0.75em;
-}
-
-#highlights p {
-  font-weight: 400;
-  font-size: 15px;
-}
-
-#highlights .vt-box {
-  background-color: transparent;
-}
-
-#sponsors {
-  max-width: 900px;
-  margin: 0px auto;
-}
-
-#sponsors h2 {
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 1em;
-}
-
-#sponsors .sponsor-container {
-  margin-bottom: 3em;
 }
 
 @media (max-width: 960px) {
@@ -219,10 +135,6 @@ html:not(.dark) .accent,
     font-size: 16px;
     margin: 18px 0 30px;
   }
-  #special-sponsor img {
-    display: block;
-    margin: 2px auto 1px;
-  }
   #highlights h3 {
     margin-bottom: 0.6em;
   }
@@ -239,4 +151,25 @@ html:not(.dark) .accent,
     font-size: 36px;
   }
 }
+
+.api-filter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 20px;
+}
+
+.api-filter input {
+  border: 1px solid var(--vt-c-divider);
+  border-radius: 24px;
+  padding: 6px 30px;
+  width: 500px;
+  line-height: 24px;
+}
+
+.api-filter:focus {
+  border-color: var(--vt-c-green-light);
+}
+
 </style>
