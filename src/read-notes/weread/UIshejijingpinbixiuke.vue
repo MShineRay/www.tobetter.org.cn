@@ -49,7 +49,7 @@ export default {
   name: 'UIshejijingpinbixiuke'
 }
 </script>
-<style>
+<style scoped>
 @import '/css/weread.css';
 @import '/css/readnotes.css';
 </style>

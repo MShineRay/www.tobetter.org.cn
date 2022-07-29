@@ -524,7 +524,7 @@
     <!--  </footer>-->
   </div>
 </template>
-<style>
+<style scoped>
 @import '/css/weread.css';
 @import '/css/readnotes.css';
 </style>
