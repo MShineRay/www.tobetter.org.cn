@@ -10,7 +10,9 @@
     "lib": ["ESNext", "DOM"],
     "types": ["vite/client"],
     "paths": {
-      "@vue/theme": ["src/index.ts"]
+      "@vue/theme": ["src/index.ts"],
+      "@axiosUtils": ["src/public/scripts/axiosUtils.js"],
+      "@apiList": ["src/public/scripts/apiList.js"]
     }
   },
   "include": [
