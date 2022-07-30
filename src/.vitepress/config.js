@@ -210,6 +210,26 @@ module.exports = (async () => {
           src: '/scripts/felogsdk.init.js',
         }
       ],
+      [
+        'link',
+        {
+          href:'https://unpkg.com/element-plus@2.2.11/dist/index.css',
+          rel: 'stylesheet',
+          type:'text/css'
+        }
+      ],
+      // [
+      //   'script',
+      //   {
+      //     src: 'https://unpkg.com/element-plus@2.2.11/dist/index.full.min.js',
+      //   }
+      // ],
+      [
+        'script',
+        {
+          src: '/scripts/axios.min.js',
+        }
+      ],
     ],
 
     themeConfig: {
