@@ -1,4 +1,4 @@
-import { u as useData, a as useRoute, b as useRouter } from "./app.ee242831.js";
+import { u as useData, a as useRoute, b as useRouter } from "./app.3f29aa2e.js";
 import { f as defineComponent, H as onMounted, o as openBlock, b as createElementBlock } from "./plugin-vue_export-helper.90f9abfb.js";
 import "./framework.e8470be5.js";
 /*! @docsearch/js 3.0.0 | MIT License | © Algolia, Inc. and contributors | https://docsearch.algolia.com */

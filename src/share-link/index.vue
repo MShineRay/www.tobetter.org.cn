@@ -41,11 +41,34 @@ const confirmAdd = async function(){
   if(!opt.data.name || !opt.data.url){
     return false
   }
+
   await addShareLink(opt)
   addDialogVisible.value = false
   await queryList()
 }
 
+// import type { FormInstance } from 'element-plus'
+
+// const ruleFormRef = ref<FormInstance>()
+const checkUrl = (rule: any, value: any, callback: any) => {
+  if (!value) {
+    return callback(new Error('Please input the url'))
+  }
+  setTimeout(() => {
+    //判断URL地址的正则表达式为:http(s)?://([\w-]+\.)+[\w-]+(/[\w- ./?%&=]*)?
+    //下面的代码中应用了转义字符"\"输出一个字符"/"
+    alert(1)
+    const Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
+    if (new RegExp(Expression).test(value) === true) {
+      callback()
+    } else {
+      callback(new Error('Please input a valid url'))
+    }
+  }, 1000)
+}
+const rules = reactive({
+  url: [{ validator: checkUrl, trigger: 'blur' }]
+})
 </script>
 
 <template>
@@ -83,15 +106,15 @@ const confirmAdd = async function(){
 
     </div>
     <ElDialog v-model="addDialogVisible" title="Add Share Link">
-      <ElForm :model="addDialogForm">
+      <ElForm :model="addDialogForm" :rules="rules">
         <ElFormItem label="name" prop="name" :label-width="formLabelWidth" required>
-          <ElInput v-model="addDialogForm.name" autocomplete="off" />
+          <ElInput v-model.trim="addDialogForm.name" autocomplete="off" maxlength="100"/>
         </ElFormItem>
         <ElFormItem label="url" prop="url" :label-width="formLabelWidth" required>
-          <ElInput v-model="addDialogForm.url" autocomplete="off" />
+          <ElInput type="textarea" placeholder="e.g. https://www.xxx.com" v-model.trim="addDialogForm.url" autocomplete="off" maxlength="500"/>
         </ElFormItem>
         <ElFormItem label="desc" :label-width="formLabelWidth">
-          <ElInput v-model="addDialogForm.desc" autocomplete="off" />
+          <ElInput type="textarea" v-model.trim="addDialogForm.desc" autocomplete="off" />
         </ElFormItem>
       </ElForm>
       <template #footer>

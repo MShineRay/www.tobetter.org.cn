@@ -34,9 +34,9 @@ if(typeof window !== "undefined"){
 //添加响应拦截器
  window.axios.interceptors.response.use(response => {
     // debug
-    if (window.felogsdk && window.felogsdk.report) {
-      typeof window !== undefined && window.felogsdk.report('FE_AJAX', response)
-    }
+    // if (window.felogsdk && window.felogsdk.report) {
+    //   typeof window !== undefined && window.felogsdk.report('FE_AJAX', response)
+    // }
     return response;
   }, error => {
     return Promise.reject(error);

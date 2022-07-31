@@ -6502,9 +6502,6 @@ if (typeof window !== "undefined") {
     return Promise.reject(error);
   });
   window.axios.interceptors.response.use((response) => {
-    if (window.felogsdk && window.felogsdk.report) {
-      typeof window !== void 0 && window.felogsdk.report("FE_AJAX", response);
-    }
     return response;
   }, (error) => {
     return Promise.reject(error);
@@ -6542,7 +6539,7 @@ function addShareLink(data) {
   };
   return innerRequest(opt, data, "post");
 }
-var index_vue_vue_type_style_index_0_scoped_true_lang = /* @__PURE__ */ (() => "\n#api-index[data-v-0fa1333c] {\n  max-width: 1024px;\n  margin: 0 auto;\n  padding: 32px 32px;\n}\n.header[data-v-0fa1333c] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n.api-filter[data-v-0fa1333c] {\n  display: flex;\n  align-items: center;\n  justify-content: flex-start;\n  gap: 1rem;\n  margin-bottom: 30px;\n}\n.api-filter input[data-v-0fa1333c] {\n  border: 1px solid var(--vt-c-divider);\n  border-radius: 24px;\n  padding: 6px 24px;\n  width: 400px;\n}\n.api-filter[data-v-0fa1333c]:focus {\n  border-color: var(--vt-c-green-light);\n}\n.api-filter .btn-search[data-v-0fa1333c]{\n  cursor: pointer;\n}\n@media (max-width: 768px) {\n#api-index[data-v-0fa1333c] {\n    padding: 42px 24px;\n}\n.api-groups a[data-v-0fa1333c] {\n    font-size: 14px;\n}\n.header[data-v-0fa1333c] {\n    display: block;\n}\n}\n.list[data-v-0fa1333c]{\n}\n.list .item[data-v-0fa1333c] {\n  margin-bottom: 30px;\n}\n.list .item .title[data-v-0fa1333c]{\n  color: #1a0dab;\n  text-decoration: none;\n  -webkit-tap-highlight-color: rgba(0,0,0,.10);\n  font-size: 20px;\n  font-weight: 400;\n  display: inline-block;\n  line-height: 1.3;\n  margin-bottom: 3px;\n}\n.list .item .desc[data-v-0fa1333c]{\n  display: -webkit-box;\n  overflow: hidden;\n  -webkit-line-clamp: 2;\n  -webkit-box-orient: vertical;\n  text-overflow: ellipsis;\n  width: 60%;\n  word-break: break-all;\n}\n")();
+var index_vue_vue_type_style_index_0_scoped_true_lang = /* @__PURE__ */ (() => "\n#api-index[data-v-15b94c3e] {\n  max-width: 1024px;\n  margin: 0 auto;\n  padding: 32px 32px;\n}\n.header[data-v-15b94c3e] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n.api-filter[data-v-15b94c3e] {\n  display: flex;\n  align-items: center;\n  justify-content: flex-start;\n  gap: 1rem;\n  margin-bottom: 30px;\n}\n.api-filter input[data-v-15b94c3e] {\n  border: 1px solid var(--vt-c-divider);\n  border-radius: 24px;\n  padding: 6px 24px;\n  width: 400px;\n}\n.api-filter[data-v-15b94c3e]:focus {\n  border-color: var(--vt-c-green-light);\n}\n.api-filter .btn-search[data-v-15b94c3e]{\n  cursor: pointer;\n}\n@media (max-width: 768px) {\n#api-index[data-v-15b94c3e] {\n    padding: 42px 24px;\n}\n.api-groups a[data-v-15b94c3e] {\n    font-size: 14px;\n}\n.header[data-v-15b94c3e] {\n    display: block;\n}\n}\n.list[data-v-15b94c3e]{\n}\n.list .item[data-v-15b94c3e] {\n  margin-bottom: 30px;\n}\n.list .item .title[data-v-15b94c3e]{\n  color: #1a0dab;\n  text-decoration: none;\n  -webkit-tap-highlight-color: rgba(0,0,0,.10);\n  font-size: 20px;\n  font-weight: 400;\n  display: inline-block;\n  line-height: 1.3;\n  margin-bottom: 3px;\n}\n.list .item .desc[data-v-15b94c3e]{\n  display: -webkit-box;\n  overflow: hidden;\n  -webkit-line-clamp: 2;\n  -webkit-box-orient: vertical;\n  text-overflow: ellipsis;\n  width: 60%;\n  word-break: break-all;\n}\n")();
 const _hoisted_1 = { id: "api-index" };
 const _hoisted_2 = { class: "header" };
 const _hoisted_3 = { class: "api-filter" };
@@ -6594,6 +6591,23 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
       addDialogVisible.value = false;
       await queryList();
     };
+    const checkUrl = (rule, value, callback) => {
+      if (!value) {
+        return callback(new Error("Please input the url"));
+      }
+      setTimeout(() => {
+        alert(1);
+        const Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
+        if (new RegExp(Expression).test(value) === true) {
+          callback();
+        } else {
+          callback(new Error("Please input a valid url"));
+        }
+      }, 1e3);
+    };
+    const rules2 = reactive({
+      url: [{ validator: checkUrl, trigger: "blur" }]
+    });
     return (_ctx, _cache) => {
       return openBlock(), createElementBlock("div", _hoisted_1, [
         createBaseVNode("div", _hoisted_2, [
@@ -6672,7 +6686,10 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
             ])
           ]),
           default: withCtx(() => [
-            createVNode(unref(ElForm), { model: unref(addDialogForm) }, {
+            createVNode(unref(ElForm), {
+              model: unref(addDialogForm),
+              rules: unref(rules2)
+            }, {
               default: withCtx(() => [
                 createVNode(unref(ElFormItem), {
                   label: "name",
@@ -6684,7 +6701,9 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
                     createVNode(unref(ElInput), {
                       modelValue: unref(addDialogForm).name,
                       "onUpdate:modelValue": _cache[1] || (_cache[1] = ($event) => unref(addDialogForm).name = $event),
-                      autocomplete: "off"
+                      modelModifiers: { trim: true },
+                      autocomplete: "off",
+                      maxlength: "100"
                     }, null, 8, ["modelValue"])
                   ]),
                   _: 1
@@ -6697,9 +6716,13 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
                 }, {
                   default: withCtx(() => [
                     createVNode(unref(ElInput), {
+                      type: "textarea",
+                      placeholder: "e.g. https://www.xxx.com",
                       modelValue: unref(addDialogForm).url,
                       "onUpdate:modelValue": _cache[2] || (_cache[2] = ($event) => unref(addDialogForm).url = $event),
-                      autocomplete: "off"
+                      modelModifiers: { trim: true },
+                      autocomplete: "off",
+                      maxlength: "500"
                     }, null, 8, ["modelValue"])
                   ]),
                   _: 1
@@ -6710,8 +6733,10 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
                 }, {
                   default: withCtx(() => [
                     createVNode(unref(ElInput), {
+                      type: "textarea",
                       modelValue: unref(addDialogForm).desc,
                       "onUpdate:modelValue": _cache[3] || (_cache[3] = ($event) => unref(addDialogForm).desc = $event),
+                      modelModifiers: { trim: true },
                       autocomplete: "off"
                     }, null, 8, ["modelValue"])
                   ]),
@@ -6719,7 +6744,7 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
                 })
               ]),
               _: 1
-            }, 8, ["model"])
+            }, 8, ["model", "rules"])
           ]),
           _: 1
         }, 8, ["modelValue"])
@@ -6727,7 +6752,7 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
     };
   }
 });
-var WorkNotesIndex = /* @__PURE__ */ _export_sfc$1(_sfc_main$1, [["__scopeId", "data-v-0fa1333c"]]);
+var WorkNotesIndex = /* @__PURE__ */ _export_sfc$1(_sfc_main$1, [["__scopeId", "data-v-15b94c3e"]]);
 const __pageData = '{"title":"","description":"","frontmatter":{"page":true,"footer":false},"relativePath":"share-link/index.md","lastUpdated":1649231303667}';
 const __default__ = {};
 const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
