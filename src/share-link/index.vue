@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { ElButton,ElDialog, ElForm, ElFormItem, ElInput} from 'element-plus'
-import { ref, computed, defineComponent, reactive, toRefs} from 'vue'
+import { ElButton,ElDialog, ElForm, ElFormItem, ElInput, ElTag} from 'element-plus'
+import { ref, computed, defineComponent, reactive, toRefs, nextTick} from 'vue'
 import {getShareLinkList, addShareLink} from '../public/scripts/apiList.js'
 const query = ref('')
 let addDialogVisible = ref(false)
@@ -22,12 +22,38 @@ const queryList = async function(){
   shareLinkList.value = data || []
 }
 queryList()
-const formLabelWidth = '140px'
+const formLabelWidth = '100px'
 // defineComponent({
 //   components: {
 //     ElButton,
 //   },
 // })
+
+
+const inputValue = ref('')
+const dynamicTags = ref([])
+const inputVisible = ref(false)
+const InputRef = ref<InstanceType<typeof ElInput>>()
+
+const handleClose = (tag: string) => {
+  dynamicTags.value.splice(dynamicTags.value.indexOf(tag), 1)
+}
+
+const showInput = () => {
+  inputVisible.value = true
+  nextTick(() => {
+    InputRef.value!.input!.focus()
+  })
+}
+
+const handleInputConfirm = () => {
+  if (inputValue.value && dynamicTags.value.length<6 && inputValue.value.length<30) {
+    dynamicTags.value.push(inputValue.value)
+  }
+  inputVisible.value = false
+  inputValue.value = ''
+}
+
 const confirmAdd = async function(){
   console.log(addDialogForm)
   let opt = {
@@ -35,9 +61,11 @@ const confirmAdd = async function(){
       "name": addDialogForm.name,
       "url": addDialogForm.url,
       "label_id": "",
-      "remark": addDialogForm.desc
+      "remark": addDialogForm.desc,
+      "label_name": dynamicTags.value.join(',')
     }
   }
+  console.log(dynamicTags)
   if(!opt.data.name || !opt.data.url){
     return false
   }
@@ -57,7 +85,6 @@ const checkUrl = (rule: any, value: any, callback: any) => {
   setTimeout(() => {
     //判断URL地址的正则表达式为:http(s)?://([\w-]+\.)+[\w-]+(/[\w- ./?%&=]*)?
     //下面的代码中应用了转义字符"\"输出一个字符"/"
-    alert(1)
     const Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
     if (new RegExp(Expression).test(value) === true) {
       callback()
@@ -69,6 +96,7 @@ const checkUrl = (rule: any, value: any, callback: any) => {
 const rules = reactive({
   url: [{ validator: checkUrl, trigger: 'blur' }]
 })
+
 </script>
 
 <template>
@@ -102,6 +130,7 @@ const rules = reactive({
         <a class="title" :href="item.url" target="_blank">{{ item.name }}</a>
         <div class="desc">{{item.desc}}</div>
         <div class="desc">{{item.url}}</div>
+        <div class="label">{{item.label_name}}</div>
       </div>
 
     </div>
@@ -116,6 +145,30 @@ const rules = reactive({
         <ElFormItem label="desc" :label-width="formLabelWidth">
           <ElInput type="textarea" v-model.trim="addDialogForm.desc" autocomplete="off" />
         </ElFormItem>
+        <el-form-item label="label" :label-width="formLabelWidth">
+          <el-tag
+            v-for="tag in dynamicTags"
+            :key="tag"
+            class="mx-1"
+            closable
+            :disable-transitions="false"
+            @close="handleClose(tag)"
+          >
+            {{ tag }}
+          </el-tag>
+          <el-input
+            v-if="inputVisible"
+            ref="InputRef"
+            v-model="inputValue"
+            class="ml-1 w-20"
+            size="small"
+            @keyup.enter="handleInputConfirm"
+            @blur="handleInputConfirm"
+          />
+          <el-button v-else class="button-new-tag ml-1" size="small" @click="showInput">
+            + New Tag
+          </el-button>
+        </el-form-item>
       </ElForm>
       <template #footer>
       <span class="dialog-footer">
@@ -200,5 +253,15 @@ const rules = reactive({
   text-overflow: ellipsis;
   width: 60%;
   word-break: break-all;
+}
+.list .item .label{
+  font-size: 10px;
+}
+>>> .el-tag {
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+.button-new-tag{
+  margin-bottom: 5px;
 }
 </style>

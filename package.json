@@ -1,6 +1,6 @@
 {
   "name": "www.tobetter.org.cn",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "https://www.tobetter.org.cn",
   "main": "src/index.ts",
   "exports": {
