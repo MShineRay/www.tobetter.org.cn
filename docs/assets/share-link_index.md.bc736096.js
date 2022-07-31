@@ -11584,7 +11584,7 @@ function innerRequest(resource, data = {}, method4 = "post") {
     })();
   });
 }
-const API = "http://localhost:3000/";
+const API = "https://www.tobetter.org.cn/apife/";
 function getShareLinkList(data = {}) {
   let opt = {
     url: API + "api/share/link/query"
