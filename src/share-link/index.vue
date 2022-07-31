@@ -5,7 +5,7 @@ import {getShareLinkList, addShareLink} from '../public/scripts/apiList.js'
 const query = ref('')
 let addDialogVisible = ref(false)
 const addDialogForm = reactive({
-  name:1,
+  name:"",
   url:'',
   desc:"",
   label:''
@@ -84,10 +84,10 @@ const confirmAdd = async function(){
     </div>
     <ElDialog v-model="addDialogVisible" title="Add Share Link">
       <ElForm :model="addDialogForm">
-        <ElFormItem label="Name" :label-width="formLabelWidth">
+        <ElFormItem label="name" prop="name" :label-width="formLabelWidth" required>
           <ElInput v-model="addDialogForm.name" autocomplete="off" />
         </ElFormItem>
-        <ElFormItem label="Url" :label-width="formLabelWidth">
+        <ElFormItem label="url" prop="url" :label-width="formLabelWidth" required>
           <ElInput v-model="addDialogForm.url" autocomplete="off" />
         </ElFormItem>
         <ElFormItem label="desc" :label-width="formLabelWidth">

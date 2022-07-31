@@ -6542,7 +6542,7 @@ function addShareLink(data) {
   };
   return innerRequest(opt, data, "post");
 }
-var index_vue_vue_type_style_index_0_scoped_true_lang = /* @__PURE__ */ (() => "\n#api-index[data-v-7c58a7b5] {\n  max-width: 1024px;\n  margin: 0 auto;\n  padding: 32px 32px;\n}\n.header[data-v-7c58a7b5] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n.api-filter[data-v-7c58a7b5] {\n  display: flex;\n  align-items: center;\n  justify-content: flex-start;\n  gap: 1rem;\n  margin-bottom: 30px;\n}\n.api-filter input[data-v-7c58a7b5] {\n  border: 1px solid var(--vt-c-divider);\n  border-radius: 24px;\n  padding: 6px 24px;\n  width: 400px;\n}\n.api-filter[data-v-7c58a7b5]:focus {\n  border-color: var(--vt-c-green-light);\n}\n.api-filter .btn-search[data-v-7c58a7b5]{\n  cursor: pointer;\n}\n@media (max-width: 768px) {\n#api-index[data-v-7c58a7b5] {\n    padding: 42px 24px;\n}\n.api-groups a[data-v-7c58a7b5] {\n    font-size: 14px;\n}\n.header[data-v-7c58a7b5] {\n    display: block;\n}\n}\n.list[data-v-7c58a7b5]{\n}\n.list .item[data-v-7c58a7b5] {\n  margin-bottom: 30px;\n}\n.list .item .title[data-v-7c58a7b5]{\n  color: #1a0dab;\n  text-decoration: none;\n  -webkit-tap-highlight-color: rgba(0,0,0,.10);\n  font-size: 20px;\n  font-weight: 400;\n  display: inline-block;\n  line-height: 1.3;\n  margin-bottom: 3px;\n}\n.list .item .desc[data-v-7c58a7b5]{\n  display: -webkit-box;\n  overflow: hidden;\n  -webkit-line-clamp: 2;\n  -webkit-box-orient: vertical;\n  text-overflow: ellipsis;\n  width: 60%;\n  word-break: break-all;\n}\n")();
+var index_vue_vue_type_style_index_0_scoped_true_lang = /* @__PURE__ */ (() => "\n#api-index[data-v-0fa1333c] {\n  max-width: 1024px;\n  margin: 0 auto;\n  padding: 32px 32px;\n}\n.header[data-v-0fa1333c] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n.api-filter[data-v-0fa1333c] {\n  display: flex;\n  align-items: center;\n  justify-content: flex-start;\n  gap: 1rem;\n  margin-bottom: 30px;\n}\n.api-filter input[data-v-0fa1333c] {\n  border: 1px solid var(--vt-c-divider);\n  border-radius: 24px;\n  padding: 6px 24px;\n  width: 400px;\n}\n.api-filter[data-v-0fa1333c]:focus {\n  border-color: var(--vt-c-green-light);\n}\n.api-filter .btn-search[data-v-0fa1333c]{\n  cursor: pointer;\n}\n@media (max-width: 768px) {\n#api-index[data-v-0fa1333c] {\n    padding: 42px 24px;\n}\n.api-groups a[data-v-0fa1333c] {\n    font-size: 14px;\n}\n.header[data-v-0fa1333c] {\n    display: block;\n}\n}\n.list[data-v-0fa1333c]{\n}\n.list .item[data-v-0fa1333c] {\n  margin-bottom: 30px;\n}\n.list .item .title[data-v-0fa1333c]{\n  color: #1a0dab;\n  text-decoration: none;\n  -webkit-tap-highlight-color: rgba(0,0,0,.10);\n  font-size: 20px;\n  font-weight: 400;\n  display: inline-block;\n  line-height: 1.3;\n  margin-bottom: 3px;\n}\n.list .item .desc[data-v-0fa1333c]{\n  display: -webkit-box;\n  overflow: hidden;\n  -webkit-line-clamp: 2;\n  -webkit-box-orient: vertical;\n  text-overflow: ellipsis;\n  width: 60%;\n  word-break: break-all;\n}\n")();
 const _hoisted_1 = { id: "api-index" };
 const _hoisted_2 = { class: "header" };
 const _hoisted_3 = { class: "api-filter" };
@@ -6561,7 +6561,7 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
     const query = ref("");
     let addDialogVisible = ref(false);
     const addDialogForm = reactive({
-      name: 1,
+      name: "",
       url: "",
       desc: "",
       label: ""
@@ -6675,8 +6675,10 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
             createVNode(unref(ElForm), { model: unref(addDialogForm) }, {
               default: withCtx(() => [
                 createVNode(unref(ElFormItem), {
-                  label: "Name",
-                  "label-width": formLabelWidth
+                  label: "name",
+                  prop: "name",
+                  "label-width": formLabelWidth,
+                  required: ""
                 }, {
                   default: withCtx(() => [
                     createVNode(unref(ElInput), {
@@ -6688,8 +6690,10 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
                   _: 1
                 }),
                 createVNode(unref(ElFormItem), {
-                  label: "Url",
-                  "label-width": formLabelWidth
+                  label: "url",
+                  prop: "url",
+                  "label-width": formLabelWidth,
+                  required: ""
                 }, {
                   default: withCtx(() => [
                     createVNode(unref(ElInput), {
@@ -6723,7 +6727,7 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
     };
   }
 });
-var WorkNotesIndex = /* @__PURE__ */ _export_sfc$1(_sfc_main$1, [["__scopeId", "data-v-7c58a7b5"]]);
+var WorkNotesIndex = /* @__PURE__ */ _export_sfc$1(_sfc_main$1, [["__scopeId", "data-v-0fa1333c"]]);
 const __pageData = '{"title":"","description":"","frontmatter":{"page":true,"footer":false},"relativePath":"share-link/index.md","lastUpdated":1649231303667}';
 const __default__ = {};
 const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
