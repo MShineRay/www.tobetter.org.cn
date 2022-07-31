@@ -218,12 +218,12 @@ module.exports = (async () => {
           type:'text/css'
         }
       ],
-      [
-        'script',
-        {
-          src: 'https://unpkg.com/element-plus@2.2.11/dist/index.full.min.js',
-        }
-      ],
+      // [
+      //   'script',
+      //   {
+      //     src: 'https://unpkg.com/element-plus@2.2.11/dist/index.full.min.js',
+      //   }
+      // ],
       [
         'script',
         {
