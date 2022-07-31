@@ -148,6 +148,7 @@ const rules = reactive({
 
     </div>
     <el-pagination
+      v-if="pageTotal"
       v-model:currentPage="currentPage"
       v-model:page-size="pageSize"
       :page-sizes="[10, 20, 30, 40, 50, 100]"

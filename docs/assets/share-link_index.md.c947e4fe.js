@@ -11597,7 +11597,7 @@ function addShareLink(data) {
   };
   return innerRequest(opt, data, "post");
 }
-var index_vue_vue_type_style_index_0_scoped_true_lang = /* @__PURE__ */ (() => "\n#api-index[data-v-8dd01fca] {\n  max-width: 1024px;\n  margin: 0 auto;\n  padding: 32px 32px;\n}\n.header[data-v-8dd01fca] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n.api-filter[data-v-8dd01fca] {\n  display: flex;\n  align-items: center;\n  justify-content: flex-start;\n  gap: 1rem;\n  margin-bottom: 30px;\n}\n.api-filter input[data-v-8dd01fca] {\n  border: 1px solid var(--vt-c-divider);\n  border-radius: 24px;\n  padding: 6px 24px;\n  width: 400px;\n}\n.api-filter[data-v-8dd01fca]:focus {\n  border-color: var(--vt-c-green-light);\n}\n.api-filter .btn-search[data-v-8dd01fca]{\n  cursor: pointer;\n}\n@media (max-width: 768px) {\n#api-index[data-v-8dd01fca] {\n    padding: 42px 24px;\n}\n.api-groups a[data-v-8dd01fca] {\n    font-size: 14px;\n}\n.header[data-v-8dd01fca] {\n    display: block;\n}\n}\n.list[data-v-8dd01fca]{\n}\n.list .item[data-v-8dd01fca] {\n  margin-bottom: 30px;\n}\n.list .item .title[data-v-8dd01fca]{\n  color: #1a0dab;\n  text-decoration: none;\n  -webkit-tap-highlight-color: rgba(0,0,0,.10);\n  font-size: 20px;\n  font-weight: 400;\n  display: inline-block;\n  line-height: 1.3;\n  margin-bottom: 3px;\n}\n.list .item .desc[data-v-8dd01fca]{\n  display: -webkit-box;\n  overflow: hidden;\n  -webkit-line-clamp: 2;\n  -webkit-box-orient: vertical;\n  text-overflow: ellipsis;\n  width: 60%;\n  word-break: break-all;\n}\n.list .item .label[data-v-8dd01fca]{\n  font-size: 10px;\n}\n[data-v-8dd01fca] .el-tag {\n  margin-right: 10px;\n  margin-bottom: 5px;\n}\n.button-new-tag[data-v-8dd01fca]{\n  margin-bottom: 5px;\n}\n")();
+var index_vue_vue_type_style_index_0_scoped_true_lang = /* @__PURE__ */ (() => "\n#api-index[data-v-32cfbe15] {\n  max-width: 1024px;\n  margin: 0 auto;\n  padding: 32px 32px;\n}\n.header[data-v-32cfbe15] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n.api-filter[data-v-32cfbe15] {\n  display: flex;\n  align-items: center;\n  justify-content: flex-start;\n  gap: 1rem;\n  margin-bottom: 30px;\n}\n.api-filter input[data-v-32cfbe15] {\n  border: 1px solid var(--vt-c-divider);\n  border-radius: 24px;\n  padding: 6px 24px;\n  width: 400px;\n}\n.api-filter[data-v-32cfbe15]:focus {\n  border-color: var(--vt-c-green-light);\n}\n.api-filter .btn-search[data-v-32cfbe15]{\n  cursor: pointer;\n}\n@media (max-width: 768px) {\n#api-index[data-v-32cfbe15] {\n    padding: 42px 24px;\n}\n.api-groups a[data-v-32cfbe15] {\n    font-size: 14px;\n}\n.header[data-v-32cfbe15] {\n    display: block;\n}\n}\n.list[data-v-32cfbe15]{\n}\n.list .item[data-v-32cfbe15] {\n  margin-bottom: 30px;\n}\n.list .item .title[data-v-32cfbe15]{\n  color: #1a0dab;\n  text-decoration: none;\n  -webkit-tap-highlight-color: rgba(0,0,0,.10);\n  font-size: 20px;\n  font-weight: 400;\n  display: inline-block;\n  line-height: 1.3;\n  margin-bottom: 3px;\n}\n.list .item .desc[data-v-32cfbe15]{\n  display: -webkit-box;\n  overflow: hidden;\n  -webkit-line-clamp: 2;\n  -webkit-box-orient: vertical;\n  text-overflow: ellipsis;\n  width: 60%;\n  word-break: break-all;\n}\n.list .item .label[data-v-32cfbe15]{\n  font-size: 10px;\n}\n[data-v-32cfbe15] .el-tag {\n  margin-right: 10px;\n  margin-bottom: 5px;\n}\n.button-new-tag[data-v-32cfbe15]{\n  margin-bottom: 5px;\n}\n")();
 const _hoisted_1 = { id: "api-index" };
 const _hoisted_2 = { class: "header" };
 const _hoisted_3 = { class: "api-filter" };
@@ -11755,7 +11755,8 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
             ]);
           }), 256))
         ]),
-        createVNode(unref(ElPagination), {
+        unref(pageTotal) ? (openBlock(), createBlock(unref(ElPagination), {
+          key: 0,
           currentPage: currentPage.value,
           "onUpdate:currentPage": _cache[1] || (_cache[1] = ($event) => currentPage.value = $event),
           "page-size": unref(pageSize),
@@ -11766,7 +11767,7 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
           total: unref(pageTotal),
           onSizeChange: queryList,
           onCurrentChange: queryList
-        }, null, 8, ["currentPage", "page-size", "total"]),
+        }, null, 8, ["currentPage", "page-size", "total"])) : createCommentVNode("", true),
         createVNode(unref(ElDialog), {
           modelValue: unref(addDialogVisible),
           "onUpdate:modelValue": _cache[8] || (_cache[8] = ($event) => isRef(addDialogVisible) ? addDialogVisible.value = $event : addDialogVisible = $event),
@@ -11903,7 +11904,7 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
     };
   }
 });
-var WorkNotesIndex = /* @__PURE__ */ _export_sfc$1(_sfc_main$1, [["__scopeId", "data-v-8dd01fca"]]);
+var WorkNotesIndex = /* @__PURE__ */ _export_sfc$1(_sfc_main$1, [["__scopeId", "data-v-32cfbe15"]]);
 const __pageData = '{"title":"","description":"","frontmatter":{"page":true,"footer":false},"relativePath":"share-link/index.md","lastUpdated":1649231303667}';
 const __default__ = {};
 const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
