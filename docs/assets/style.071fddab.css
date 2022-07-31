@@ -3126,52 +3126,52 @@ h2[data-v-66963443] {
 }
 }
 
-#api-index[data-v-32cfbe15] {
+#api-index[data-v-003c5a90] {
   max-width: 1024px;
   margin: 0 auto;
   padding: 32px 32px;
 }
-.header[data-v-32cfbe15] {
+.header[data-v-003c5a90] {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.api-filter[data-v-32cfbe15] {
+.api-filter[data-v-003c5a90] {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: 1rem;
   margin-bottom: 30px;
 }
-.api-filter input[data-v-32cfbe15] {
+.api-filter input[data-v-003c5a90] {
   border: 1px solid var(--vt-c-divider);
   border-radius: 24px;
   padding: 6px 24px;
   width: 400px;
 }
-.api-filter[data-v-32cfbe15]:focus {
+.api-filter[data-v-003c5a90]:focus {
   border-color: var(--vt-c-green-light);
 }
-.api-filter .btn-search[data-v-32cfbe15]{
+.api-filter .btn-search[data-v-003c5a90]{
   cursor: pointer;
 }
 @media (max-width: 768px) {
-#api-index[data-v-32cfbe15] {
+#api-index[data-v-003c5a90] {
     padding: 42px 24px;
 }
-.api-groups a[data-v-32cfbe15] {
+.api-groups a[data-v-003c5a90] {
     font-size: 14px;
 }
-.header[data-v-32cfbe15] {
+.header[data-v-003c5a90] {
     display: block;
 }
 }
-.list[data-v-32cfbe15]{
+.list[data-v-003c5a90]{
 }
-.list .item[data-v-32cfbe15] {
+.list .item[data-v-003c5a90] {
   margin-bottom: 30px;
 }
-.list .item .title[data-v-32cfbe15]{
+.list .item .title[data-v-003c5a90]{
   color: #1a0dab;
   text-decoration: none;
   -webkit-tap-highlight-color: rgba(0,0,0,.10);
@@ -3181,7 +3181,7 @@ h2[data-v-66963443] {
   line-height: 1.3;
   margin-bottom: 3px;
 }
-.list .item .desc[data-v-32cfbe15]{
+.list .item .desc[data-v-003c5a90]{
   display: -webkit-box;
   overflow: hidden;
   -webkit-line-clamp: 2;
@@ -3190,14 +3190,14 @@ h2[data-v-66963443] {
   width: 60%;
   word-break: break-all;
 }
-.list .item .label[data-v-32cfbe15]{
+.list .item .label[data-v-003c5a90]{
   font-size: 10px;
 }
-[data-v-32cfbe15] .el-tag {
+[data-v-003c5a90] .el-tag {
   margin-right: 10px;
   margin-bottom: 5px;
 }
-.button-new-tag[data-v-32cfbe15]{
+.button-new-tag[data-v-003c5a90]{
   margin-bottom: 5px;
 }
 

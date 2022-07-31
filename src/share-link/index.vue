@@ -35,7 +35,7 @@ const queryList = async function(){
   shareLinkList.value = res.data.list || []
 }
 queryList()
-const formLabelWidth = '100px'
+const formLabelWidth = '60px'
 // defineComponent({
 //   components: {
 //     ElButton,
