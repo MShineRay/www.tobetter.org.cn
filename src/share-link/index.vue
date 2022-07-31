@@ -24,6 +24,9 @@ const queryList = async function(){
     "pageNum": currentPage.value,
     "pageSize": pageSize.value
   }
+  if(query.value){
+    opt.searchKey = query.value
+  }
   const res = await getShareLinkList(opt)
   console.error(res.data.total)
   pageTotal.value = res.data.total
