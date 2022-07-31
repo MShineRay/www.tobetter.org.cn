@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ElButton,ElDialog, ElForm, ElFormItem, ElInput, ElTag} from 'element-plus'
+import { ElButton,ElDialog, ElForm, ElFormItem, ElInput, ElTag, ElPagination} from 'element-plus'
 import { ref, computed, defineComponent, reactive, toRefs, nextTick} from 'vue'
 import {getShareLinkList, addShareLink} from '../public/scripts/apiList.js'
 const query = ref('')
@@ -16,10 +16,20 @@ const showAddDialog = function(){
   addDialogVisible.value = true
   console.log(addDialogVisible)
 }
-
+let pageTotal = ref(0)
+const currentPage = ref(1)
+let pageSize = ref(10)
 const queryList = async function(){
-  const {data} = await getShareLinkList()
-  shareLinkList.value = data || []
+  let opt = {
+    "pageNum": currentPage.value,
+    "pageSize": pageSize.value
+  }
+  const res = await getShareLinkList(opt)
+  console.error(res.data.total)
+  pageTotal.value = res.data.total
+  console.error(pageTotal)
+  console.error(currentPage)
+  shareLinkList.value = res.data.list || []
 }
 queryList()
 const formLabelWidth = '100px'
@@ -134,6 +144,16 @@ const rules = reactive({
       </div>
 
     </div>
+    <el-pagination
+      v-model:currentPage="currentPage"
+      v-model:page-size="pageSize"
+      :page-sizes="[10, 20, 30, 40, 50, 100]"
+      small="small"
+      layout="sizes, prev, pager, next, jumper,total"
+      :total="pageTotal"
+      @size-change="queryList"
+      @current-change="queryList"
+    />
     <ElDialog v-model="addDialogVisible" title="Add Share Link">
       <ElForm :model="addDialogForm" :rules="rules">
         <ElFormItem label="name" prop="name" :label-width="formLabelWidth" required>
