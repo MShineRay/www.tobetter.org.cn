@@ -118,12 +118,11 @@ const rules = reactive({
       <div class="api-filter">
         <input
           type="search"
-          placeholder="Enter keyword"
           id="api-filter"
           v-model="query"
         />
         <label class="btn-search" for="api-filter" @click="queryList">
-          <ElButton type="primary">Search</ElButton>
+          <ElButton type="primary" >Search</ElButton>
         </label>
         <label class="btn-search" for="api-filter" @click="showAddDialog">
           <ElButton>Add</ElButton>
@@ -234,6 +233,7 @@ const rules = reactive({
   width: 400px;
 }
 
+
 .api-filter:focus {
   border-color: var(--vt-c-green-light);
 }
@@ -250,6 +250,10 @@ const rules = reactive({
   }
   .header {
     display: block;
+  }
+
+  .api-filter input {
+    width: 160px;
   }
 }
 

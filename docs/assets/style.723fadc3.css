@@ -3126,52 +3126,55 @@ h2[data-v-66963443] {
 }
 }
 
-#api-index[data-v-003c5a90] {
+#api-index[data-v-d0353a8c] {
   max-width: 1024px;
   margin: 0 auto;
   padding: 32px 32px;
 }
-.header[data-v-003c5a90] {
+.header[data-v-d0353a8c] {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.api-filter[data-v-003c5a90] {
+.api-filter[data-v-d0353a8c] {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: 1rem;
   margin-bottom: 30px;
 }
-.api-filter input[data-v-003c5a90] {
+.api-filter input[data-v-d0353a8c] {
   border: 1px solid var(--vt-c-divider);
   border-radius: 24px;
   padding: 6px 24px;
   width: 400px;
 }
-.api-filter[data-v-003c5a90]:focus {
+.api-filter[data-v-d0353a8c]:focus {
   border-color: var(--vt-c-green-light);
 }
-.api-filter .btn-search[data-v-003c5a90]{
+.api-filter .btn-search[data-v-d0353a8c]{
   cursor: pointer;
 }
 @media (max-width: 768px) {
-#api-index[data-v-003c5a90] {
+#api-index[data-v-d0353a8c] {
     padding: 42px 24px;
 }
-.api-groups a[data-v-003c5a90] {
+.api-groups a[data-v-d0353a8c] {
     font-size: 14px;
 }
-.header[data-v-003c5a90] {
+.header[data-v-d0353a8c] {
     display: block;
 }
+.api-filter input[data-v-d0353a8c] {
+    width: 160px;
 }
-.list[data-v-003c5a90]{
 }
-.list .item[data-v-003c5a90] {
+.list[data-v-d0353a8c]{
+}
+.list .item[data-v-d0353a8c] {
   margin-bottom: 30px;
 }
-.list .item .title[data-v-003c5a90]{
+.list .item .title[data-v-d0353a8c]{
   color: #1a0dab;
   text-decoration: none;
   -webkit-tap-highlight-color: rgba(0,0,0,.10);
@@ -3181,7 +3184,7 @@ h2[data-v-66963443] {
   line-height: 1.3;
   margin-bottom: 3px;
 }
-.list .item .desc[data-v-003c5a90]{
+.list .item .desc[data-v-d0353a8c]{
   display: -webkit-box;
   overflow: hidden;
   -webkit-line-clamp: 2;
@@ -3190,14 +3193,14 @@ h2[data-v-66963443] {
   width: 60%;
   word-break: break-all;
 }
-.list .item .label[data-v-003c5a90]{
+.list .item .label[data-v-d0353a8c]{
   font-size: 10px;
 }
-[data-v-003c5a90] .el-tag {
+[data-v-d0353a8c] .el-tag {
   margin-right: 10px;
   margin-bottom: 5px;
 }
-.button-new-tag[data-v-003c5a90]{
+.button-new-tag[data-v-d0353a8c]{
   margin-bottom: 5px;
 }
 
