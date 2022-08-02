@@ -19,21 +19,21 @@ const nav = [
   },
   {
     text: 'Back-End',
-    link: '/back-end/'
+    link: 'https://www.tobetter.org.cn/back-end/'
+  },
+  {
+    text: 'Vue',
+    items: [
+      { text: 'Playground', link: 'https://sfc.vuejs.org'},
+      { text: 'API', link: 'https://vuejs.org/api/'},
+      { text: 'introduction', link: 'https://vuejs.org/guide/introduction' },
+      { text: 'tutorial', link: 'https://vuejs.org/tutorial/' },
+      { text: 'examples', link: 'https://vuejs.org/examples/' },
+      { text: 'Quick Start', link: 'https://vuejs.org/guide/quick-start' },
+      { text: 'Style Guide', link: 'https://vuejs.org/style-guide/' },
+      // {text: 'Migration from Vue 2', link: 'https://v3-migration.vuejs.org/'}
+    ]
   }
-  // {
-  //   text: 'Vue',
-  //   items: [
-  //     { text: 'Playground', link: 'https://sfc.vuejs.org'},
-  //     { text: 'API', link: 'https://vuejs.org/api/'},
-  //     { text: 'introduction', link: 'https://vuejs.org/guide/introduction' },
-  //     { text: 'tutorial', link: 'https://vuejs.org/tutorial/' },
-  //     { text: 'examples', link: 'https://vuejs.org/examples/' },
-  //     { text: 'Quick Start', link: 'https://vuejs.org/guide/quick-start' },
-  //     { text: 'Style Guide', link: 'https://vuejs.org/style-guide/' },
-  //     // {text: 'Migration from Vue 2', link: 'https://v3-migration.vuejs.org/'}
-  //   ]
-  // }
 ]
 
 // TODO 抽取左侧菜单
