@@ -92,7 +92,7 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
   }
 });
 var WorkNotesIndex = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["__scopeId", "data-v-4acc5c07"]]);
-const __pageData = '{"title":"","description":"","frontmatter":{"page":true,"footer":false},"relativePath":"www-notes/index.md","lastUpdated":1649231303667}';
+const __pageData = '{"title":"","description":"","frontmatter":{"page":true,"footer":false},"relativePath":"share-link/index.md","lastUpdated":1649231303667}';
 const __default__ = {};
 const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
   setup(__props) {
